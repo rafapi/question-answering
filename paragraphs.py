@@ -2,13 +2,13 @@ import re
 import textract
 import numpy as np
 
-from pandas import DaraFrame
+from pandas import DataFrame
 
 
 text = '200309-sustainable-finance-teg-final-report-taxonomy-annexes_en.pdf'
 
 # Extract raw text from PDF file
-raw_text = textract.process(text, method='pdfminer')
+raw_text = textract.process(text, method='pdfminer').decode()
 
 # Split by paragraph and remove blank spaces
 text_split = re.split('\n\n', raw_text.decode())
