@@ -8,7 +8,7 @@ from pandas import DataFrame
 text = '200309-sustainable-finance-teg-final-report-taxonomy-annexes_en.pdf'
 
 # Extract raw text from PDF file
-raw_text = textract.process(text, method='pdfminer').decode()
+raw_text = textract.process(text.decode(), method='pdfminer')
 
 # Split by paragraph and remove blank spaces
 text_split = re.split('\n\n', raw_text.decode())
